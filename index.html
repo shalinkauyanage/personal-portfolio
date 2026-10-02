@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Shalinka - ICT Undergraduate | Software Developer | Technology Enthusiast. Portfolio showcasing projects, skills, and achievements."/>
+<title>Shalinka | ICT Undergraduate Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #080b14;
+  --bg2: #0d1120;
+  --bg3: #111828;
+  --surface: #141c2e;
+  --surface2: #1a2440;
+  --border: rgba(120,140,200,0.12);
+  --border2: rgba(120,140,200,0.22);
+  --accent: #7c5cfc;
+  --accent2: #38bdf8;
+  --accent3: #a78bfa;
+  --pink: #f472b6;
+  --text: #e8eaf6;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --grad: linear-gradient(135deg,#7c5cfc,#38bdf8);
+  --grad2: linear-gradient(135deg,#a78bfa,#f472b6);
+  --grad3: linear-gradient(135deg,#0ea5e9,#7c5cfc);
+  --glow: 0 0 40px rgba(124,92,252,0.25);
+  --glow2: 0 0 60px rgba(56,189,248,0.2);
+  --r: 16px;
+  --r2: 24px;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+[data-theme="light"] {
+  --bg: #f4f6fb;
+  --bg2: #edf0f8;
+  --bg3: #e8ecf5;
+  --surface: #ffffff;
+  --surface2: #f0f2fc;
+  --border: rgba(100,100,180,0.15);
+  --border2: rgba(100,100,180,0.28);
+  --text: #1a1f36;
+  --text2: #4a5568;
+  --text3: #94a3b8;
+  --glow: 0 4px 32px rgba(124,92,252,0.12);
+  --glow2: 0 4px 32px rgba(56,189,248,0.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden;transition:background .3s,color .3s;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{cursor:pointer;font-family:var(--font-body);}
+
+/* SCROLL PROGRESS */
+#scroll-bar{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:10000;width:0%;transition:width .1s;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .4s;}
+nav.scrolled{background:rgba(8,11,20,0.88);backdrop-filter:blur(18px);border-bottom-color:var(--border);}
+[data-theme="light"] nav.scrolled{background:rgba(244,246,251,0.88);}
+.nav-logo{font-family:var(--font-head);font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--text2);transition:color .2s;letter-spacing:.02em;}
+.nav-links a:hover{color:var(--accent3);}
+.nav-right{display:flex;gap:1rem;align-items:center;}
+
+/* --- UPDATED THEME BUTTON --- */
+.theme-btn{background:var(--surface);border:1px solid var(--border);border-radius:50px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;transition:all .2s;cursor:pointer;}
+.theme-btn:hover{border-color:var(--accent);box-shadow:var(--glow);}
+
+/* Base Font Awesome icon structure inside button */
+.theme-btn i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Crisp white for the moon icon (dark theme) */
+.theme-btn i.fa-moon {
+  color: #ffffff;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+}
+
+/* Bright yellow for the sun icon (light theme) */
+.theme-btn i.fa-sun {
+  color: #ffca28;
+  filter: drop-shadow(0 0 6px rgba(255, 202, 40, 0.5));
+}
+
+/* Subtle rotation animation when hovering over the button */
+.theme-btn:hover i {
+  transform: rotate(15deg) scale(1.05);
+}
+/* ---------------------------- */
+
+.nav-cta{background:var(--grad);border:none;color:#fff;padding:.5rem 1.2rem;border-radius:50px;font-size:.875rem;font-weight:600;transition:opacity .2s,transform .2s;}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
+.mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:1.5rem 5%;z-index:999;}
+.mobile-menu.open{display:block;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:1rem;}
+.mobile-menu a{font-size:1rem;color:var(--text2);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:100px 5% 60px;}
+.hero-canvas{position:absolute;inset:0;z-index:0;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.4;}
+.hero-orb1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,252,.18) 0%,transparent 70%);top:-100px;right:-100px;animation:float 8s ease-in-out infinite;}
+.hero-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.15) 0%,transparent 70%);bottom:-100px;left:-50px;animation:float 10s ease-in-out infinite reverse;}
+.hero-orb3{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(244,114,182,.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 6s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-30px) rotate(5deg);}}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5;}50%{transform:translate(-50%,-50%) scale(1.2);opacity:1;}}
+.hero-content{position:relative;z-index:1;max-width:900px;text-align:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.3);border-radius:50px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:var(--accent3);margin-bottom:1.5rem;letter-spacing:.06em;text-transform:uppercase;}
+.hero-badge::before{content:'';width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 8px #22c55e;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hero-avatar{width:130px;height:130px;border-radius:50%;margin:0 auto 1.5rem;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:3rem;font-weight:800;color:#fff;position:relative;box-shadow:0 0 0 4px rgba(124,92,252,.2),0 0 0 8px rgba(124,92,252,.1),var(--glow);}
+.hero-avatar::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid transparent;background:var(--grad) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:spin 8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+h1.hero-name{font-family:var(--font-head);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:.5rem;}
+.hero-name .highlight{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-tagline{font-size:clamp(1rem,2vw,1.25rem);color:var(--text2);font-weight:300;margin-bottom:1.5rem;letter-spacing:.02em;}
+.hero-desc{max-width:600px;margin:0 auto 2.5rem;color:var(--text2);font-size:1rem;line-height:1.8;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;border-radius:50px;font-size:.9rem;font-weight:600;border:none;transition:all .25s;letter-spacing:.02em;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 4px 20px rgba(124,92,252,.4);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,92,252,.5);}
+.btn-outline{background:transparent;border:1.5px solid var(--border2);color:var(--text);backdrop-filter:blur(8px);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent3);transform:translateY(-2px);}
+.btn-ghost{background:rgba(56,189,248,.1);border:1.5px solid rgba(56,189,248,.3);color:#fff;}
+.btn-ghost:hover{background:rgba(56,189,248,.2);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap;}
+.hero-stat{text-align:center;}
+.hero-stat-num{font-family:var(--font-head);font-size:2rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-stat-label{font-size:.8rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--text3);font-size:.75rem;animation:bounce2 2s infinite;}
+@keyframes bounce2{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
+.scroll-hint svg{animation:bounce2 2s infinite;}
+
+/* SECTIONS */
+section{padding:100px 5%;}
+.section-container{max-width:1200px;margin:0 auto;}
+.section-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.75rem;}
+.section-label::before{content:'';width:20px;height:2px;background:var(--grad);}
+h2.section-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem;}
+.section-sub{color:var(--text2);max-width:600px;margin-bottom:3.5rem;font-size:1rem;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:0 auto;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-text p{color:var(--text2);margin-bottom:1rem;line-height:1.9;}
+.about-interests{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;}
+.interest-tag{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.4rem .9rem;font-size:.8rem;color:var(--text2);display:flex;align-items:center;gap:.4rem;transition:all .2s;}
+.interest-tag:hover{border-color:var(--accent);color:var(--accent3);}
+.about-cards{display:flex;flex-direction:column;gap:1rem;}
+.about-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;transition:all .3s;position:relative;overflow:hidden;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .3s;}
+.about-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:var(--glow);}
+.about-card:hover::before{opacity:1;}
+.about-card-icon{font-size:1.5rem;margin-bottom:.75rem;}
+.about-card-title{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+.about-card-text{font-size:.875rem;color:var(--text2);}
+.about-card-icon{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:rgba(124,92,252,.12);color:var(--accent3);font-size:1.5rem;margin-bottom:1rem;}
+.about-card-header{display:flex;align-items:center;gap:18px;margin-bottom:15px;}
+.about-card-header .about-card-title{margin:0;font-size:1.2rem;}
+.about-card-header .about-card-icon{margin-bottom:0 !important;flex-shrink:0;}
+
+/* EDUCATION */
+.edu-timeline{position:relative;padding-left:2rem;}
+.edu-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);}
+.edu-item{position:relative;margin-bottom:3rem;}
+.edu-item::before{content:'';position:absolute;left:-2.35rem;top:.4rem;width:14px;height:14px;border-radius:50%;background:var(--grad);box-shadow:var(--glow);}
+.edu-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;transition:all .3s;}
+.edu-card:hover{border-color:var(--border2);box-shadow:var(--glow);}
+.edu-period{display:inline-block;background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.25);border-radius:50px;padding:.25rem .75rem;font-size:.75rem;font-weight:600;color:var(--accent3);margin-bottom:.75rem;}
+.edu-degree{font-family:var(--font-head);font-size:1.3rem;font-weight:700;margin-bottom:.25rem;}
+.edu-school{color:var(--accent2);font-weight:500;margin-bottom:.75rem;}
+.edu-courses{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;}
+.course-chip{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.25rem .65rem;font-size:.75rem;color:var(--text2);}
+.edu-school{display:flex;align-items:center;gap:10px;color:var(--accent3);font-weight:600;margin-bottom:1rem;}
+
+.edu-logo{width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid var(--border);background:white;}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+.skill-cat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .3s;}
+.skill-cat:hover{border-color:var(--border2);transform:translateY(-3px);box-shadow:var(--glow);}
+.skill-cat-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;}
+.skill-cat-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.skill-cat-title{font-family:var(--font-head);font-weight:700;font-size:1rem;}
+.skill-item{margin-bottom:1rem;}
+.skill-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;}
+.skill-name{font-size:.875rem;color:var(--text2);}
+.skill-pct{font-size:.75rem;font-weight:600;color:var(--accent3);}
+.skill-bar{height:6px;background:var(--surface2);border-radius:3px;overflow:hidden;}
+.skill-fill{height:100%;border-radius:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform 1s ease .2s;}
+.skill-fill.anim{transform:scaleX(1);}
+.soft-chip i {margin-right: 6px;}
+
+/* FULL WIDTH SOFT SKILLS CARD */
+.skill-cat.soft-skills-card{grid-column:1 / -1;}
+
+/* SOFT SKILLS */
+.soft-skills{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem;justify-content:center;}
+.soft-chip{background:var(--surface2);border:1px solid var(--border);border-radius:50px;padding:.5rem 1rem;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:.4rem;transition:all .2s;}
+.soft-chip:hover{border-color:var(--accent);color:var(--accent3);transform:translateY(-2px);}
+
+
+/* PROJECTS */
+.projects-filter{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.filter-btn{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:.4rem 1rem;font-size:.8rem;color:var(--text2);transition:all .2s;}
+.filter-btn.active,.filter-btn:hover{background:var(--grad);border-color:transparent;color:#fff;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:2rem;}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:all .35s;position:relative;}
+.project-card:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:0 20px 50px rgba(0,0,0,.4),var(--glow);}
+.project-img{height:200px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden;}
+.project-img-overlay{position:absolute;inset:0;background:var(--grad);opacity:.08;}
+.project-body{padding:1.5rem;}
+.project-category{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem;}
+.project-title{font-family:var(--font-head);font-size:1.2rem;font-weight:700;margin-bottom:.6rem;}
+.project-desc{font-size:.875rem;color:var(--text2);margin-bottom:1rem;line-height:1.7;}
+.project-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;}
+.project-tag{background:var(--surface2);border:1px solid var(--border);border-radius:4px;padding:.2rem .6rem;font-size:.7rem;color:var(--text3);}
+.project-links{display:flex;gap:.75rem;}
+.project-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600;color:var(--text2);border:1px solid var(--border);border-radius:8px;padding:.4rem .9rem;transition:all .2s;}
+.project-link:hover{border-color:var(--accent);color:var(--accent3);}
+.project-link.featured{background:var(--grad);border-color:transparent;color:#fff;}
+
+/* EXPERIENCE */
+.exp-grid{display:flex;flex-direction:column;gap:1.5rem;}
+.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;transition:all .3s;}
+.exp-card:hover{border-color:var(--border2);transform:translateX(4px);box-shadow:var(--glow);}
+.exp-icon{width:56px;height:56px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.exp-period{font-size:.75rem;color:var(--accent2);font-weight:600;margin-bottom:.25rem;}
+.exp-title{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:.15rem;}
+.exp-org{color:var(--text2);font-size:.9rem;margin-bottom.75rem;}
+.exp-list{margin-top:.75rem;padding-left:1.2rem;}
+.exp-list li{font-size:.875rem;color:var(--text2);margin-bottom:.35rem;}
+.exp-icon {display: flex;align-items: center;justify-content: center;font-size: 1.5rem; /* Adjust icon size as needed */
+}
+
+/* CERTIFICATIONS */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;}
+.cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.cert-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.cert-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow);}
+.cert-card:hover::after{transform:scaleX(1);}
+.cert-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;}
+.cert-title{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.35rem;height:96px;}
+.cert-org{font-size:.8rem;color:var(--accent2);font-weight:600;margin-bottom:.5rem;height:48px;}
+.cert-date{font-size:.75rem;color:var(--text3);}
+.cert-verify{display:inline-flex;align-items:center;gap:.3rem;font-size:.75rem;color:var(--accent3);margin-top:auto;border:1px solid rgba(124,92,252,.25);border-radius:50px;padding:.25rem .65rem;transition:all .2s;align-self:flex-start;}
+.cert-verify:hover{background:rgba(124,92,252,.1);}
+.cert-preview{width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:1rem;border:1px solid var(--border);}
+.cert-card{overflow:hidden;}
+.cert-card:hover .cert-preview{transform:scale(1.03);transition:0.3s;}
+
+/* ACTIVITIES */
+.activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;}
+.activity-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .3s;}
+.activity-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow);}
+.activity-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;}
+.activity-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.activity-title{font-family:var(--font-head);font-weight:700;font-size:1rem;}
+.activity-role{font-size:.8rem;color:var(--accent);font-weight:600;}
+.activity-desc{font-size:.875rem;color:var(--text2);line-height:1.7;}
+.activity-icon {display: flex;align-items: center;justify-content: center;font-size: 1.25rem; /* Adjust icon size */width: 45px;      height: 45px;       border-radius: 50%; }
+
+/* ACHIEVEMENTS */
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+.ach-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;text-align:center;transition:all .3s;}
+.ach-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow);}
+.ach-icon{font-size:2.5rem; margin-bottom:1rem;transition:all .3s;}
+.ach-card:nth-child(1) .ach-icon{color:#60a5fa;text-shadow:0 0 18px rgba(96,165,250,.35);}
+.ach-card:nth-child(2) .ach-icon{color:#fbbf24;text-shadow:0 0 18px rgba(251,191,36,.35);}
+.ach-card:nth-child(3) .ach-icon{color:#22c55e;text-shadow:0 0 18px rgba(34,197,94,.35);}
+.ach-card:nth-child(4) .ach-icon{color:#f59e0b;text-shadow:0 0 18px rgba(245,158,11,.35);}
+.ach-card:nth-child(5) .ach-icon{color:#facc15;text-shadow:0 0 18px rgba(250,204,21,.35);}
+.ach-card:nth-child(6) .ach-icon{color:#f97316;text-shadow:0 0 18px rgba(249,115,22,.35);}
+.ach-card:nth-child(7) .ach-icon{color:#eab308;text-shadow:0 0 18px rgba(234,179,8,.35);}
+.ach-card:nth-child(8) .ach-icon{color:#fbbf24;text-shadow:0 0 18px rgba(251,191,36,.35);}
+.ach-card:hover .ach-icon{transform:scale(1.08);filter:brightness(1.15);}
+.ach-title{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+.ach-sub{font-size:.8rem;color:var(--text2);}
+.ach-year{display:inline-block;background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.25);border-radius:50px;padding:.2rem .65rem;font-size:.7rem;color:var(--accent3);margin-top:.5rem;}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:1rem;}
+.gallery-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:2.5rem;transition:all .3s;cursor:pointer;position:relative;}
+.gallery-item:hover{border-color:var(--border2);transform:scale(1.02);box-shadow:var(--glow);}
+.gallery-item.wide{grid-column:span 2;}
+.gallery-item.tall{grid-row:span 2;}
+.gallery-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));padding:1rem;font-size:.8rem;font-weight:600;transform:translateY(100%);transition:transform .3s;}
+.gallery-item:hover .gallery-label{transform:translateY(0);}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;}
+.testi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;transition:all .3s;position:relative;}
+.testi-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:var(--glow);}
+.testi-quote{font-size:3rem;color:var(--accent);opacity:.3;position:absolute;top:1rem;right:1.5rem;font-family:serif;line-height:1;}
+.testi-text{font-size:.9rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:.75rem;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:1.1rem;color:#fff;flex-shrink:0;}
+.testi-name{font-family:var(--font-head);font-weight:700;font-size:.9rem;}
+.testi-role{font-size:.75rem;color:var(--text3);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem;}
+.contact-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:all .3s;}
+.contact-item:hover{border-color:var(--accent);transform:translateX(4px);}
+.contact-icon{width:44px;height:44px;border-radius:10px;background:rgba(124,92,252,.12);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.contact-item-label{font-size:.75rem;color:var(--text3);margin-bottom:.2rem;text-transform:uppercase;letter-spacing:.06em;}
+.contact-item-val{font-size:.9rem;color:var(--text);font-weight:500;}
+.contact-socials{display:flex;gap:.75rem;margin-top:1rem;}
+.social-btn{width:44px;height:44px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .2s;}
+.social-btn:hover{border-color:var(--accent);background:rgba(124,92,252,.1);transform:translateY(-2px);}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:2.5rem;}
+.form-group{margin-bottom:1.25rem;}
+.form-label{display:block;font-size:.8rem;font-weight:600;color:var(--text2);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em;}
+.form-input{width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:10px;padding:.75rem 1rem;font-family:var(--font-body);font-size:.9rem;color:var(--text);transition:border-color .2s,box-shadow .2s;resize:none;}
+.form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,92,252,.1);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;background:var(--grad);border:none;color:#fff;padding:.875rem;border-radius:10px;font-size:.95rem;font-weight:600;letter-spacing:.04em;transition:all .25s;margin-top:.5rem;}
+.form-submit:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,92,252,.4);}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:4rem 5% 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;}
+.footer-brand .nav-logo{margin-bottom:.75rem;display:block;}
+.footer-desc{font-size:.875rem;color:var(--text2);margin-bottom:1rem;max-width:280px;}
+.footer-heading{font-family:var(--font-head);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text);margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.footer-links a{font-size:.875rem;color:var(--text2);transition:color .2s;}
+.footer-links a:hover{color:var(--accent3);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap:1rem;max-width:1200px;margin:0 auto;}
+.footer-copy{font-size:.8rem;color:var(--text3);}
+.footer-made{font-size:.8rem;color:var(--text3);}
+.footer-made span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600;}
+
+/* STATS BAR */
+.stats-section{padding:60px 5%;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+.stat-item{text-align:center;}
+.stat-num{font-family:var(--font-head);font-size:2.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-label{font-size:.8rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem;}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+.fade-left{opacity:0;transform:translateX(-30px);transition:opacity .6s ease,transform .6s ease;}
+.fade-left.visible{opacity:1;transform:translateX(0);}
+.stagger-1{transition-delay:.1s;}
+.stagger-2{transition-delay:.2s;}
+.stagger-3{transition-delay:.3s;}
+.stagger-4{transition-delay:.4s;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-item.wide{grid-column:span 1;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .hero-stats{gap:1.5rem;}
+  .projects-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  section{padding:70px 5%;}
+  .exp-card{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;align-items:center;}
+  .btn{width:100%;max-width:280px;justify-content:center;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr;}
+}
+.hidden{display:none !important;}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-bar"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">Portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#activities">Activities</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    
+    <button class="theme-btn" id="themeToggle" title="Toggle theme">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
+    </button>
+    <a class="btn nav-cta" href="#contact">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+</div>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" onclick="closeMobile()">About</a></li>
+    <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+    <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+    <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+    <li><a href="#certifications" onclick="closeMobile()">Certifications</a></li>
+    <li><a href="#activities" onclick="closeMobile()">Activities</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-orb3"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🟢 &nbsp;Open to Opportunities</div>
+    <div class="hero-avatar">S</div>
+    <h1 class="hero-name"><span class="highlight"> Shalinka </span></h1>
+    
+    <p class="hero-desc">Passionate about crafting innovative digital solutions that merge creativity with technology. Dedicated to building meaningful software experiences that make a real-world impact.</p>
+    <div class="hero-btns">
+      <a class="btn btn-ghost" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="#" onclick="downloadCV()">Download CV</a>
+      <a class="btn btn-ghost" href="#contact">Contact Me</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" data-count="5">0</div><div class="hero-stat-label">Projects</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="8">0</div><div class="hero-stat-label">Certifications</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="3">0</div><div class="hero-stat-label">Years Study</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="12">0</div><div class="hero-stat-label">Activities</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="12" height="20" rx="6"/><circle cx="8" cy="8" r="2" fill="currentColor" stroke="none"><animate attributeName="cy" values="8;14;8" dur="1.5s" repeatCount="indefinite"/></circle></svg>
+    scroll
+  </div>
+</section>
+
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-container">
+    <div class="section-label">Who I Am</div>
+    <h2 class="section-title">About <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Me</span></h2>
+    <div class="about-grid">
+      <div class="about-text fade-left">
+        <p>
+  I am a Software Engineering undergraduate at ICBT Campus who bridges the gap between clean code and strategic brand growth. Combining a strong foundation in software development with a HubSpot certification in Social Media Marketing, I bring a unique dual perspective to the tech space—merging analytical problem-solving with an understanding of digital audience engagement.
+</p>
+
+<p>
+  My technical mindset is backed by a proven track record of leadership and execution. Having captained the St. Peter’s College U17 cricket team through years of high-stakes competition and served on the ICBT Career Fair Organizing Committee, I have developed a sharp command over team coordination, strategy, and professional communication.
+</p>
+
+<p>
+  Driven by technical innovation and collaborative execution, I am eager to leverage my software training and leadership experience to contribute to forward-thinking development teams and impactful digital projects.
+</p>
+
+<p>
+  Beyond code and strategy, I am someone who thrives on continuous learning and adaptability. Whether I am architecting a new application or analyzing market trends, my focus is always on creating efficient, scalable, and user-centric solutions. 
+</p>
+        
+      </div>
+     <div class="about-cards fade-up">
+
+  <div class="about-card">
+
+    <div class="about-card-header">
+        <div class="about-card-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+
+        <div class="about-card-title">
+            Software Engineering Undergraduate
+        </div>
+    </div>
+
+    <div class="about-card-text">
+        Currently pursuing a BSc (Hons) in Software Engineering at ICBT Campus while building practical knowledge in programming, software development, and system design.
+    </div>
+
+</div>
+
+  <div class="about-card">
+
+    <div class="about-card-header">
+        <div class="about-card-icon">
+            <i class="fas fa-people-group"></i>
+        </div>
+
+        <div class="about-card-title">
+            Leadership & Teamwork
+        </div>
+    </div>
+
+    <div class="about-card-text">
+        Former U17 Cricket Captain at St. Peter's College, developing leadership, communication, teamwork, and decision-making abilities through competitive sports.
+    </div>
+
+</div>
+
+  <div class="about-card">
+
+    <div class="about-card-header">
+        <div class="about-card-icon">
+            <i class="fas fa-bullhorn"></i>
+        </div>
+
+        <div class="about-card-title">
+            Digital Brand Development
+        </div>
+    </div>
+
+    <div class="about-card-text">
+        Experienced in social media brand development and content-driven projects, combining creativity, strategic thinking, and technology to build engaging digital experiences.
+    </div>
+
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-container">
+    <div class="section-label">Academic Journey</div>
+
+    <h2 class="section-title">
+      My <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Education</span>
+    </h2>
+
+    <p class="section-sub">
+  Building a strong foundation for a successful career in Information Technology through academic learning, practical projects, leadership experiences, and continuous professional development.
+</p>
+
+    <div class="edu-timeline">
+
+      <!-- ICBT -->
+      <div class="edu-item fade-up">
+        <div class="edu-card">
+
+          <span class="edu-period">2025 – 2027</span>
+
+          <div class="edu-degree">
+            BSc (Hons) Software Engineering
+          </div>
+
+         <div class="edu-school">
+  <img src="images/unnamed.jpg" alt="ICBT Campus" class="edu-logo">
+  <span>ICBT Campus</span>
+</div>
+
+          <p style="font-size:.875rem;color:var(--text2);margin-bottom:1rem;">
+Currently pursuing a BSc (Hons) in Software Engineering at ICBT Campus. Academic focus includes software engineering, programming, system development, databases, and modern software technologies.
+</p>
+
+          <div class="edu-courses">
+<span class="course-chip">Software Engineering</span>
+<span class="course-chip">Programming Fundamentals</span>
+<span class="course-chip">Software Development</span>
+<span class="course-chip">Database Systems</span>
+<span class="course-chip">Web Technologies</span>
+<span class="course-chip">System Analysis & Design</span>
+</div>
+
+          <div style="margin-top:1rem;">
+            <p style="font-size:.85rem;color:var(--text2);">
+              <strong>Additional Qualifications:</strong><br>
+• Higher Diploma in Computing and Software Engineering<br>
+• International Diploma in English (Level 3)<br>
+• International Diploma in Information and Communication Technology (Level 3)
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ST PETERS -->
+      <div class="edu-item fade-up stagger-1">
+        <div class="edu-card">
+
+          <span class="edu-period">2012 – 2024</span>
+
+          <div class="edu-degree">
+            General Education
+          </div>
+
+          <div class="edu-school">
+  <img src="images/stpeterscollegecolombo_logo.jpg" alt="St. Peter's College" class="edu-logo">
+  <span>St. Peter's College, Colombo 04</span>
+</div>
+
+          <p style="font-size:.875rem;color:var(--text2);margin-bottom:1rem;">
+            Completed secondary education while actively participating in sports, athletics, and extracurricular activities. Represented the College Cricket Team from U13 to U19 and served as Captain of the U17 Cricket Team (2022–2023), leading strategy, coordination, and team development.
+          </p>
+
+          <div class="edu-courses">
+            <span class="course-chip">Cricket</span>
+            <span class="course-chip">Athletics</span>
+            <span class="course-chip">Do You Know Club</span>
+            <span class="course-chip">Leadership</span>
+            <span class="course-chip">Team Coordination</span>
+            <span class="course-chip">Problem Solving</span>
+            <span class="course-chip">Communication</span>
+            <span class="course-chip">Decision Making</span>
+          </div>
+
+      <div style="margin-top:1rem;">
+            <p style="font-size:.85rem;color:var(--text2);">
+            <strong>O/L Qualifications:</strong><br>
+• 3As - Maths, English, Religion<br>
+• 3Bs - ICT, Commerce, History<br>
+• 2Cs - Science, Sinhala, Art(S)
+            </p>
+          </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-container">
+    <div class="section-label">What I Know</div>
+    <h2 class="section-title">Technical <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Skills</span></h2>
+    <p class="section-sub">A broad skill set built through academic projects, self-learning, and hands-on development experience.</p>
+    <div class="skills-grid">
+      
+      <div class="skill-cat fade-up">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(124,92,252,.15); color:#7c5cfc;">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="skill-cat-title">Programming Languages</div>
+        </div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Java</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Python</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">PHP</span><span class="skill-pct">72%</span></div><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">C#</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+      </div>
+
+      <div class="skill-cat fade-up stagger-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(56,189,248,.15); color:#38bdf8;">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="skill-cat-title">Web Technologies</div>
+        </div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">HTML5 / CSS3</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Bootstrap</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">React</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Node.js</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+      </div>
+
+      <div class="skill-cat fade-up stagger-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(244,114,182,.15); color:#f472b6;">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div class="skill-cat-title">Database Systems</div>
+        </div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">MySQL</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Firebase</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">SQL Server</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+      </div>
+
+      <div class="skill-cat fade-up stagger-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(34,197,94,.15); color:#22c55e;">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <div class="skill-cat-title">Dev Tools & Design</div>
+        </div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Android Studio</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">VS Code</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">GitHub</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Figma</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        <div class="skill-item"><div class="skill-row"><span class="skill-name">Canva</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      </div>
+
+      <div class="skill-cat fade-up soft-skills-card">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon" style="background:rgba(251,191,36,.15); color:#fbbf24;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="skill-cat-title">Soft Skills</div>
+        </div>
+        <div class="soft-skills">
+          <span class="soft-chip"><i class="fa-solid fa-bullseye"></i> Leadership</span>
+          <span class="soft-chip"><i class="fa-solid fa-users"></i> Teamwork</span>
+          <span class="soft-chip"><i class="fa-solid fa-people-group"></i> Team Coordination</span>
+          <span class="soft-chip"><i class="fa-solid fa-building"></i> Company Collaboration</span>
+          <span class="soft-chip"><i class="fa-solid fa-magnifying-glass"></i> Problem Solving</span>
+          <span class="soft-chip"><i class="fa-solid fa-brain"></i> Decision Making</span>
+          <span class="soft-chip"><i class="fa-solid fa-comments"></i> Professional Communication</span>
+          <span class="soft-chip"><i class="fa-solid fa-list-check"></i> Project Management</span>
+          <span class="soft-chip"><i class="fa-solid fa-clock"></i> Time Management</span>
+          <span class="soft-chip"><i class="fa-solid fa-lightbulb"></i> Creative Thinking</span>
+          <span class="soft-chip"><i class="fa-solid fa-arrows-rotate"></i> Adaptability</span>
+          <span class="soft-chip"><i class="fa-solid fa-chart-simple"></i> Critical Thinking</span>
+          <span class="soft-chip"><i class="fa-solid fa-eye"></i> Attention to Detail</span>
+          <span class="soft-chip"><i class="fa-solid fa-rocket"></i> Entrepreneurship</span>
+          <span class="soft-chip"><i class="fa-solid fa-calendar-check"></i> Event Management</span>
+          <span class="soft-chip"><i class="fa-solid fa-chess"></i> Strategic Thinking</span>
+          <span class="soft-chip"><i class="fa-solid fa-building"></i> Brand Development </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-container">
+
+    <div class="section-label">What I've Built</div>
+
+    <h2 class="section-title">
+      Featured
+      <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        Projects
+      </span>
+    </h2>
+
+    <p class="section-sub">
+      A selection of academic and personal projects demonstrating my range across mobile, web, and UI/UX development.
+    </p>
+
+    <div class="projects-filter">
+  <button class="filter-btn active" data-filter="all">All Projects</button>
+  <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+  <button class="filter-btn" data-filter="web">Web</button>
+  <button class="filter-btn" data-filter="mobile">Mobile</button>
+  <button class="filter-btn" data-filter="desktop">Desktop</button>
+  <button class="filter-btn" data-filter="business">Case Study</button>
+</div>
+
+    <div class="projects-grid">
+
+      <!-- GLOBETREK -->
+      <div class="project-card fade-up stagger-2" data-cat="fullstack web">
+  <div class="project-img">
+          <img src="images/Screenshot (1715).png" alt="POWER FIT GYM MANAGMENT">
+          <div class="project-img-overlay"></div>
+        </div>
+
+  <div class="project-body">
+    <div class="project-category">Full Stack · Web System</div>
+
+    <div class="project-title"> GYM Management System</div>
+
+    <div class="project-desc">
+      A fitness management web application designed to manage
+      gym members, trainers, workout and meal plans, progress tracking,
+      memberships, payments, packages, feedback, and administrative operations
+      through dedicated dashboards.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">PHP</span>
+      <span class="project-tag">MySQL</span>
+      <span class="project-tag">JavaScript</span>
+      <span class="project-tag">HTML/CSS</span>
+    </div>
+
+    <div class="project-links">
+      <a class="project-link featured"
+         href="YOUR_POWERFIT_GITHUB_LINK"
+         target="_blank">
+        ⌥ GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+      <div class="project-card fade-up stagger-1" data-cat="web">
+
+        <div class="project-img">
+          <img src="images/Screenshot (1716).png" alt="GlobeTrek Adventures">
+          <div class="project-img-overlay"></div>
+        </div>
+
+        <div class="project-body">
+
+          <div class="project-category">Web Application </div>
+
+          <div class="project-title">Booking Management System</div>
+
+          <div class="project-desc">
+           An online travel booking management system that enables customers to browse travel packages, make and manage bookings, update profiles, and communicate with the travel company. It provides travel reservations and customer interactions.
+          </div>
+
+          <div class="project-tags">
+            <span class="project-tag">HTML5</span>
+            <span class="project-tag">CSS3</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+          </div>
+
+          <div class="project-links">
+            <a class="project-link featured"
+               href="https://github.com/shalinkauyanage/Travel-Agency-Website/tree/main/globetrek"
+               target="_blank">
+              ⌥ GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-card fade-up stagger-1" data-cat="web">
+  <div class="project-img">
+    <img src="images/Screenshot (6).png" alt="KMC Event Management System">
+    <div class="project-img-overlay"></div>
+  </div>
+
+  <div class="project-body">
+    <div class="project-category">Web Application</div>
+
+    <div class="project-title">Event Management System</div>
+
+    <div class="project-desc">
+      An event management system designed to streamline event planning, registration, scheduling, participant management, and administrative operations through a centralized digital platform. It helps organizers efficiently manage events.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">C#</span>
+      <span class="project-tag">Web API</span>
+      <span class="project-tag">Backend</span>
+      
+    </div>
+
+   <div class="project-links">
+            <a class="project-link featured"
+               href="https://github.com/shalinkauyanage/Travel-Agency-Website/tree/main/globetrek"
+               target="_blank">
+              ⌥ GitHub
+            </a>
+          </div>
+  </div>
+</div>
+
+
+      <!-- PRINTXPRESS -->
+      <div class="project-card fade-up stagger-2" data-cat="mobile">
+
+        <div class="project-img">
+          <img src="images/Screenshot (1717).png" alt="PrintXpress Mobile Application">
+          <div class="project-img-overlay"></div>
+        </div>
+
+        <div class="project-body">
+
+          <div class="project-category">Android Mobile App </div>
+
+          <div class="project-title">Service Management App</div>
+
+          <div class="project-desc">
+            A mobile application designed to streamline the printing service experience, enabling users to browse printing products, upload designs, place orders, manage orders, and schedule printing services.
+          </div>
+
+          <div class="project-tags">
+            <span class="project-tag">Android Studio</span>
+            <span class="project-tag">Java</span>
+            <span class="project-tag">SQLite</span>
+            <span class="project-tag">XML</span>
+          </div>
+
+          <div class="project-links">
+            <a class="project-link featured"
+               href="#"
+               target="_blank">
+              ⌥ GitHub
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="project-card fade-up" data-cat="desktop">
+  <div class="project-img">
+    <img src="images/Screenshot (1).png" alt="Sweet Cup Cake Shop Management System">
+    <div class="project-img-overlay"></div>
+  </div>
+
+  <div class="project-body">
+    <div class="project-category">Desktop Application </div>
+
+    <div class="project-title">Sales & Management System</div>
+
+    <div class="project-desc">
+      A Java-based desktop management system designed for a cupcake and café business,
+      featuring secure staff login, cashier and manager dashboards, sales management,
+      supply tracking, user management, and file-based data handling.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">Java</span>
+      <span class="project-tag">Java Swing</span>
+      <span class="project-tag">OOP</span>
+      <span class="project-tag">File Handling</span>
+    </div>
+
+    <div class="project-links">
+      <a class="project-link featured"
+         href="YOUR_GITHUB_REPOSITORY_LINK"
+         target="_blank">
+        ⌥ GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="project-card fade-up stagger-1" data-cat="business">
+  <div class="project-img">
+    <img src="images/Screenshot (5).png" alt="ICBT Career Day 2025">
+    <div class="project-img-overlay"></div>
+  </div>
+
+  <div class="project-body">
+    <div class="project-category">Professional Practice </div>
+
+    <div class="project-title">ICBT Career Day 2025</div>
+
+    <div class="project-desc">
+      A professional practice group project focused on planning and coordinating
+      ICBT Career Day 2025. The project covered event planning, stakeholder
+      communication, team collaboration, resource management and professional skills development.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">Event Planning</span>
+      <span class="project-tag">Management</span>
+      <span class="project-tag">Communication</span>
+    </div>
+
+    <div class="project-links">
+      <a class="project-link featured"
+         href="images/ICBT Career Day 2025.pptx">
+        ⌥ Presentation
+      </a>
+    </div>
+  </div>
+</div>
+
+      <div class="project-card fade-up stagger-1" data-cat="business">
+   <div class="project-img">
+          <img src="images/Screenshot (1718).png" alt="PIZZA HUT">
+          <div class="project-img-overlay"></div>
+        </div>
+
+  <div class="project-body">
+    <div class="project-category">Case Study</div>
+
+    <div class="project-title">Business Information Systems </div>
+
+    <div class="project-desc">
+      A Business Information Systems case study analysing how information systems
+      support operational efficiency, customer satisfaction, departmental
+      functions, decision-making, and competitive advantage at Pizza Hut Sri Lanka.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">BIS</span>
+      <span class="project-tag">TPS</span>
+      <span class="project-tag">MIS</span>
+      <span class="project-tag">CRM</span>
+      <span class="project-tag">DSS</span>
+      <span class="project-tag">ERP</span>
+    </div>
+
+    <div class="project-links">
+      <a class="project-link featured"
+         href="images/Information Systems Analysis.pptx">
+        ⌥ Presentation
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-container">
+    <div class="section-label">Work History</div>
+    <h2 class="section-title">Experience & <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Training</span></h2>
+    <p class="section-sub">Practical exposure through internships, industry programs, and collaborative team experiences.</p>
+    <div class="exp-grid">
+
+      <div class="exp-card fade-up">
+        
+        <div class="exp-icon" >
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+            <div class="exp-period">Jul 2025 – Sep 2025</div>
+            <div class="exp-title">Committee Member – Career Fair</div>
+            <div class="exp-org">ICBT Campus</div>
+            <ul class="exp-list">
+                <li>Served on the ICBT Career Fair Organising Committee.</li>
+                <li>Contributed to the planning and execution of a large-scale career fair.</li>
+                <li>Worked closely with students, staff, and industry representatives.</li>
+                <li>Developed event management and professional communication skills.</li>
+            </ul>
+        </div>
+      </div>
+
+     <div class="exp-card fade-up stagger-1">
+
+  <div class="exp-icon">
+    <i class="fa-solid fa-baseball-bat-ball"></i>
+  </div>
+
+  <div>
+    <div class="exp-period">U17 Cricket</div>
+    <div class="exp-title">Cricket Captain — U17</div>
+    <div class="exp-org">St. Peter’s College — Colombo 04</div>
+
+<ul class="exp-list">
+  <li>Led the U17 cricket team and represented St. Peter’s College in SLSCA Tournaments</li>
+  <li>Developed leadership, teamwork, communication, and decision-making skills through competitive cricket</li>
+  <li>Coordinated with teammates and coaches to prepare for matches, practices, and tournaments</li>
+  <li>Motivated team members and maintained discipline, sportsmanship, and a positive team environment</li>
+</ul>
+
+  </div>
+</div>
+
+
+      <div class="exp-card fade-up stagger-2">
+        
+        <div class="exp-icon" >
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div>
+          <div class="exp-period">2023 – 2024</div>
+          <div class="exp-title">Event Organizer & Volunteer</div>
+          <div class="exp-org">University Student Union & Community Programs</div>
+          <ul class="exp-list">
+            <li>Organized and coordinated university-level events, workshops, and student activities</li>
+            <li>Managed logistics, communications, and social media promotion for events</li>
+            <li>Led volunteer teams in community outreach and charity initiatives</li>
+            <li>Developed strong stakeholder communication and time-management skills</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-container">
+
+    <div class="section-label">Credentials</div>
+
+    <h2 class="section-title">
+      Certifications &
+      <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        Qualifications
+      </span>
+    </h2>
+
+    <p class="section-sub">
+      Professional certifications and academic qualifications that demonstrate my academic achievements, technical knowledge, and continuous learning journey.
+    </p>
+
+    <div class="certs-grid">
+
+      <!-- Higher Diploma -->
+      <div class="cert-card fade-up">
+        <img src="images/hdcse-certificate.jpg" alt="Higher Diploma Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          Higher Diploma in Computing and Software Engineering
+        </div>
+
+        <div class="cert-org">
+          ICBT Campus
+        </div>
+
+        <a class="cert-verify" href="images/hdcse-certificate.jpg" target="_blank">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- English Diploma -->
+      <div class="cert-card fade-up stagger-1">
+        <img src="images/Diploma in English.jpeg" alt="English Diploma Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          International Diploma in English (Level 3)
+        </div>
+
+        <div class="cert-org">
+          ICBT Campus
+        </div>
+
+
+        <a class="cert-verify" href="images/Diploma in English.jpeg" target="_blank">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- ICT Diploma -->
+      <div class="cert-card fade-up stagger-2">
+        <img src="images/Diploma in ITC.jpeg" alt="ICT Diploma Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          International Diploma in ICT (Level 3)
+        </div>
+
+        <div class="cert-org">
+          ICBT Campus
+        </div>
+
+        
+
+        <a class="cert-verify" href="images/Diploma in ITC.jpeg" target="_blank">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- Github -->
+      <div class="cert-card fade-up stagger-2">
+        <img src="images/certificate_Randyn_Shalinka.png" alt="GitHub Fundamentals Workshop Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          GitHub Fundamentals Workshop
+        </div>
+
+        <div class="cert-org">
+          StackNet 
+        </div>
+
+        
+
+        <a class="cert-verify" href="images/certificate_Randyn_Shalinka.png" target="_blank">
+          View Certificate
+        </a>
+      </div>
+
+      <!-- HubSpot -->
+      <div class="cert-card fade-up stagger-3">
+        <img src="images/Social Media Marketing.png" alt="HubSpot Social Media Marketing Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          Social Media Marketing Certification
+        </div>
+
+        <div class="cert-org">
+          HubSpot Academy
+        </div>
+
+
+        <a class="cert-verify" href="images/Social Media Marketing.png" target="_blank">
+          View Certificate
+        </a>
+      </div>
+      <!-- HP Foundation online -->
+      <div class="cert-card fade-up">
+        <img src="images/Screenshot (12).png" alt="AI for Business Professionals Certificate" class="cert-preview">
+
+        <div class="cert-title">
+          AI for Business Professionals
+        </div>
+
+        <div class="cert-org">
+          HP LIFE | HP Foundation 
+        </div>
+
+        <a class="cert-verify" href="images/Screenshot (12).png" target="_blank">
+          View Certificate
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<div class="divider"></div>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <div class="section-container">
+    <div class="section-label">Beyond Academics</div>
+
+    <h2 class="section-title">
+      Extracurricular
+      <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        Activities
+      </span>
+    </h2>
+
+    <p class="section-sub">
+      Developing leadership, teamwork, communication, and professional skills through sports, university activities, event management, and digital brand development.
+    </p>
+
+    <div class="activities-grid">
+
+      <!-- Career Fair Committee -->
+<div class="activity-card fade-up">
+  <div class="activity-header">
+    
+    <div class="activity-icon" style="background:rgba(124,92,252,.15); color: #7c5cfc;">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </div>
+    <div>
+      <div class="activity-title">Career Fair Organising Committee</div>
+      <div class="activity-role">ICBT Campus</div>
+    </div>
+  </div>
+
+  <div class="activity-desc">
+    Served as a Committee Member for the ICBT Career Fair, contributing to the planning, coordination, and successful execution of a large-scale career development event while collaborating with students, staff, and industry professionals.
+  </div>
+</div>
+<!-- Cricket Captain -->
+      <div class="activity-card fade-up stagger-1">
+        <div class="activity-header">
+          
+          <div class="activity-icon" style="background:rgba(56,189,248,.15); color:#38bdf8;">
+            <i class="fa-solid fa-baseball"></i>
+          </div>
+          <div>
+            <div class="activity-title">U17 Cricket Captain</div>
+            <div class="activity-role">St. Peter's College</div>
+          </div>
+        </div>
+
+        <div class="activity-desc">
+          Represented St. Peter's College Cricket Team from U13 to U19 and served as Captain of the U17 Team during 2022–2023. Led the team to the Pre-Quarter Finals while developing leadership, teamwork, and decision-making skills.
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="activity-card fade-up stagger-2">
+        <div class="activity-header">
+          
+          <div class="activity-icon" style="background:rgba(244,114,182,.15); color:#f472b6;">
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <div>
+            <div class="activity-title">Social Media Brand Development</div>
+            <div class="activity-role">Digital Content & Branding</div>
+          </div>
+        </div>
+
+        <div class="activity-desc">
+          Actively involved in social media brand development, content creation, and audience engagement. Combining creativity and technology to create impactful digital experiences and online brand presence.
+        </div>
+      </div>
+
+      <!-- Cricket & Athletics -->
+      <div class="activity-card fade-up">
+        <div class="activity-header">
+          
+          <div class="activity-icon" style="background:rgba(34,197,94,.15); color:#22c55e;">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <div>
+            <div class="activity-title">Sports & Athletics</div>
+            <div class="activity-role">Student Athlete</div>
+          </div>
+        </div>
+
+        <div class="activity-desc">
+          Participated in Cricket and Athletics throughout school, building discipline, perseverance, teamwork, and a competitive mindset that continues to support personal and professional growth.
+        </div>
+      </div>
+
+      <!-- Do You Know Club -->
+      <div class="activity-card fade-up stagger-1">
+        <div class="activity-header">
+          
+          <div class="activity-icon" style="background:rgba(251,191,36,.15); color:#fbbf24;">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div>
+            <div class="activity-title">Do You Know Club</div>
+            <div class="activity-role">Active Member</div>
+          </div>
+        </div>
+
+        <div class="activity-desc">
+          Participated in knowledge-based competitions and club activities that enhanced critical thinking, communication skills, teamwork, and general awareness.
+        </div>
+      </div>
+
+      <!-- Professional Development -->
+     <div class="activity-card fade-up stagger-2">
+        <div class="activity-header">
+          <div class="activity-icon" style="background:rgba(239,68,68,.15); color:#ef4444;">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <div>
+            <div class="activity-title">Professional Development</div>
+            <div class="activity-role">Continuous Learner</div>
+          </div>
+        </div> <div class="activity-desc">
+          Continuously developing technical and professional skills through academic projects, certifications, workshops, software development activities, and industry-focused learning opportunities.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-container">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">
+      Achievements & 
+      <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        Awards
+      </span>
+    </h2>
+
+    <p class="section-sub">
+      Milestones and recognitions earned through academic excellence, sporting achievement, leadership, and dedication.
+    </p>
+
+    <div class="achievements-grid">
+
+      <div class="ach-card fade-up">
+        <div class="ach-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="ach-title">Annual Prizes</div>
+        <div class="ach-sub">
+          Achieved Two Annual Prizes for outstanding performance and achievement at St. Peter's College
+        </div>
+        <span class="ach-year">St. Peter's College</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-1">
+        <div class="ach-icon">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <div class="ach-title">ACCA Distinction Awards</div>
+        <div class="ach-sub">
+          Achieved three distinction awards through outstanding performance in ACCA examinations
+        </div>
+        <span class="ach-year">ACCA</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-2">
+        <div class="ach-icon">
+          <i class="fa-solid fa-baseball-bat-ball"></i>
+        </div>
+        <div class="ach-title">SLSCA Quarter Finalists</div>
+        <div class="ach-sub">
+          Reached the quarter-finals three times in the All Island SLSCA Cricket Tournament
+        </div>
+        <span class="ach-year">SLSCA</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-3">
+        <div class="ach-icon">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="ach-title">Cricket Team Captain</div>
+        <div class="ach-sub">
+          Led the U17 school cricket team to the quarter-finals and Inter-House team to semi-finals
+        </div>
+        <span class="ach-year">Team Captain</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-3">
+        <div class="ach-icon">
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="ach-title">Man of the Series</div>
+        <div class="ach-sub">
+          Awarded Man of the Series for outstanding individual performance during the England Cricket Tour
+        </div>
+        <span class="ach-year">England Tour</span>
+      </div>
+
+      <div class="ach-card fade-up">
+        <div class="ach-icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="ach-title">Best Bowler Award</div>
+        <div class="ach-sub">
+          Recognized as the Best Bowler for outstanding bowling performance in a club cricket tournament
+        </div>
+        <span class="ach-year">Club Cricket</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-1">
+        <div class="ach-icon">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="ach-title">Big Match Champions</div>
+        <div class="ach-sub">
+          Part of the championship-winning team in the University Cricket Big Match
+        </div>
+        <span class="ach-year">University Cricket</span>
+      </div>
+
+      <div class="ach-card fade-up stagger-2">
+        <div class="ach-icon">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <div class="ach-title">Inter-House Sports Meet Champion</div>
+        <div class="ach-sub">
+          Achieved 1st place in the Inter-House Sports Meet on two occasions
+        </div>
+        <span class="ach-year">2× Winner</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-container">
+    <div class="section-label">Moments</div>
+    <h2 class="section-title">Photo <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Gallery</span></h2>
+    <p class="section-sub">Snapshots from projects, presentations, workshops, events, and memorable milestones.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item wide fade-up" style="background:linear-gradient(135deg,#1a1540,#2a1a60);">
+        <div class="gallery-label">PrintXpress App Demo</div>
+      </div>
+      <div class="gallery-item fade-up stagger-1" style="background:linear-gradient(135deg,#0a2040,#0a4060);">
+        <div class="gallery-label">BREATHE Platform Launch</div>
+      </div>
+      <div class="gallery-item fade-up stagger-2" style="background:linear-gradient(135deg,#1a0a40,#300a60);">
+        <div class="gallery-label">Hackathon 2024</div>
+      </div>
+      <div class="gallery-item tall fade-up" style="background:linear-gradient(135deg,#0a1a40,#1a1060);">
+        <div class="gallery-label">Workshop Facilitation</div>
+      </div>
+      <div class="gallery-item fade-up stagger-1" style="background:linear-gradient(135deg,#1a0a20,#400a30);">
+        <div class="gallery-label">Customer Service Week</div>
+      </div>
+      <div class="gallery-item fade-up stagger-2" style="background:linear-gradient(135deg,#0a2010,#0a4020);">
+        <div class="gallery-label">Community Volunteering</div>
+      </div>
+       <div class="gallery-item tall fade-up" style="background:linear-gradient(135deg,#0a1a40,#1a1060);">
+        <div class="gallery-label">Workshop Facilitation</div>
+      </div>
+      <div class="gallery-item wide fade-up" style="background:linear-gradient(135deg,#200a10,#601a20);">
+        <div class="gallery-label">ZooParc Web System</div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-container">
+    <div class="section-label">What People Say</div>
+    <h2 class="section-title">Testimonials & <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">References</span></h2>
+    <p class="section-sub">Kind words from lecturers, supervisors, and collaborators who've witnessed the journey firsthand.</p>
+    <div class="testimonials-grid">
+
+      <div class="testi-card fade-up">
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Shalinka is one of the most dedicated students I've had the pleasure of teaching. His passion for software development is evident in every project she undertakes. The BREATHE platform was a standout submission that demonstrated both technical skill and genuine empathy for users.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">DK</div>
+          <div><div class="testi-name">Dr. Kasun Perera</div><div class="testi-role">Senior Lecturer, ICBT Campus</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-up stagger-1">
+        <div class="testi-quote">"</div>
+        <div class="testi-text">During his internship, Shalinka consistently exceeded expectations. She adapted quickly, asked the right questions, and delivered quality code. His attention to UI detail and his enthusiasm for clean design made his a genuine asset to our front-end team.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">SR</div>
+          <div><div class="testi-name">Samantha Rodrigo</div><div class="testi-role">Software Engineer, Tech Company</div></div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-up stagger-2">
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Working with Shalinka on the Service Experience Team was a pleasure. She brought creativity, energy, and organizational excellence to everything we did. His leadership during Customer Service Week made the whole initiative a success.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">NF</div>
+          <div><div class="testi-name">Nishara Fernando</div><div class="testi-role">Team Lead, Student Services</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's <span style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Connect</span></h2>
+    <p class="section-sub">Open to internship opportunities, collaborative projects, freelance work, and tech conversations. Don't hesitate to reach out!</p>
+    <div class="contact-grid">
+      <div class="contact-info fade-left">
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-val">shalinkamario@email.com</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div><div class="contact-item-label">Phone</div><div class="contact-item-val">+94 77 683 6412</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-item-label">Location</div><div class="contact-item-val">Colombo, Sri Lanka</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🎓</div>
+          <div><div class="contact-item-label">University</div><div class="contact-item-val">ICBT Campus (Cardiff Met)</div></div>
+        </div>
+        <div>
+          <p style="font-size:.8rem;color:var(--text3);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.08em;">Connect on Social</p>
+          <div class="contact-socials">
+
+  <a class="social-btn"
+     href="https://www.linkedin.com/in/your-linkedin"
+     target="_blank"
+     title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a class="social-btn"
+     href="https://github.com/your-github"
+     target="_blank"
+     title="GitHub">
+      <i class="fab fa-github"></i>
+  </a>
+
+  <a class="social-btn"
+     href="https://www.instagram.com/ma_rio.02"
+     target="_blank"
+     title="Instagram">
+      <i class="fab fa-instagram"></i>
+  </a>
+
+
+</div>
+        </div>
+        <a class="btn btn-primary" href="#" onclick="downloadCV()" style="margin-top:1rem;justify-content:center;">Download My CV</a>
+      </div>
+
+      <div class="contact-form fade-up">
+        <p style="font-family:var(--font-head);font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;">Send a Message</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="John Doe"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="john@example.com"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input type="text" class="form-input" placeholder="Internship Opportunity / Project Collaboration"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" rows="5" placeholder="Hi Shalinka, I'd love to discuss..."></textarea>
+        </div>
+        <button class="form-submit" onclick="sendMessage(this)">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Shalinka</span>
+      <p class="footer-desc">ICT Undergraduate passionate about building software solutions that create real-world impact. Always open to exciting opportunities.</p>
+      <div style="display:flex;gap:.5rem;">
+        <a class="social-btn" href="https://www.linkedin.com/in/your-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-btn" href="https://github.com/your-github" title="GitHub"><i class="fab fa-instagram"></i></a>
+        <a class="social-btn" href="https://www.instagram.com/ma_rio.02" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">More</div>
+      <ul class="footer-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:shalinka@email.com">Email Me</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#" onclick="downloadCV()">Download CV</a></li>
+        <li><a href="#contact">Message</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Shalinka. All rights reserved.</span>
+    <span class="footer-made">Designed & Developed by <span>Shalinka</span> ✨</span>
+  </div>
+</footer>
+
+<script>
+// SCROLL PROGRESS
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement;
+  const pct=(s.scrollTop/(s.scrollHeight-s.clientHeight))*100;
+  document.getElementById('scroll-bar').style.width=pct+'%';
+});
+
+// NAV SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// HAMBURGER
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
+
+// THEME TOGGLE
+const btn = document.getElementById('themeToggle');
+// Target the icon element inside the button
+const themeIcon = document.getElementById('themeIcon'); 
+let dark = true;
+
+btn.addEventListener('click', () => {
+  dark = !dark;
+  document.documentElement.setAttribute('data-theme', dark ? '' : 'light');
+  
+  // Swap the Font Awesome classes instead of using emojis
+  themeIcon.className = dark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+});
+
+// SCROLL ANIMATIONS
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // Animate skill bars
+      e.target.querySelectorAll&&e.target.querySelectorAll('.skill-fill').forEach(b=>b.classList.add('anim'));
+    }
+  });
+},{threshold:.1});
+
+document.querySelectorAll('.fade-up,.fade-left,.skill-cat').forEach(el=>observer.observe(el));
+// Also trigger skill bars when skill-cat is visible
+document.querySelectorAll('.skill-cat').forEach(el=>{
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.querySelectorAll('.skill-fill').forEach(b=>b.classList.add('anim'));
+    });
+  },{threshold:.2});
+  io.observe(el);
+});
+
+// COUNTER ANIMATION
+function animateCount(el,target){
+  let start=0;
+  const dur=1500;
+  const step=timestamp=>{
+    if(!start)start=timestamp;
+    const prog=Math.min((timestamp-start)/dur,1);
+    el.textContent=Math.floor(prog*target)+(prog<1?'':'');
+    if(prog<1)requestAnimationFrame(step);
+    else el.textContent=target+'+';
+  };
+  requestAnimationFrame(step);
+}
+const counterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-count]').forEach(el=>{
+        animateCount(el,parseInt(el.dataset.count));
+      });
+      counterObserver.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.hero-stats,.stats-inner').forEach(el=>counterObserver.observe(el));
+
+// PROJECT FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card=>{
+      if(filter==='all'||card.dataset.cat.includes(filter)){
+        card.style.display='block';
+      }else{
+        card.style.display='none';
+      }
+    });
+  });
+});
+
+// FORM SUBMIT
+function sendMessage(btn){
+  const orig=btn.textContent;
+  btn.textContent='✅ Message Sent!';
+  btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},3000);
+}
+
+// CV DOWNLOAD
+function downloadCV(){
+  alert('CV download will be available once you link your actual CV file. Update the href in the download button to point to your CV PDF.');
+}
+
+// SMOOTH ACTIVE NAV
+const sections=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-200)cur=s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.style.color=a.getAttribute('href')==='#'+cur?'var(--accent3)':'';
+  });
+});
+</script>
+</body>
+</html>
