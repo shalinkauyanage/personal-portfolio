@@ -661,6 +661,108 @@ footer::after {
   .gallery-grid{grid-template-columns:1fr}
   .project-img{height:190px}
 }
+/* =========================================================
+   MOBILE COMPACT OVERRIDES (phones/tablets only; desktop untouched)
+   ========================================================= */
+@media(max-width:768px){
+  html{scroll-padding-top:76px}
+  body{line-height:1.6}
+  nav{height:60px}
+  nav.scrolled::before{inset:6px 2.5%}
+  .nav-logo{font-size:1.02rem;gap:.5rem}
+  .nav-right{gap:.5rem}
+  .theme-btn,.hamburger{width:38px;height:38px}
+  .theme-btn i{font-size:.95rem}
+  .mobile-menu{top:68px;padding:.5rem 1.2rem;border-radius:20px}
+  .mobile-menu a{padding:.7rem 0;font-size:.92rem}
+  section{padding:56px 5%}
+  .hero{padding:92px 5% 64px}
+  .section-label{font-size:.82rem;margin-bottom:.6rem}
+  h2.section-title{margin-bottom:.8rem}
+  .section-sub{font-size:.95rem;margin-bottom:2rem}
+  .hero-badge{font-size:.78rem;padding:.35rem .9rem;margin-bottom:1.2rem}
+  .hero-avatar{width:clamp(96px,28vw,120px);margin-bottom:1.3rem}
+  h1.hero-name{margin-bottom:.8rem}
+  .hero-desc{font-size:.98rem;line-height:1.65;margin-bottom:1.6rem}
+  .hero-btns{gap:.6rem}
+  .btn{padding:.7rem 1.4rem;font-size:.88rem}
+  .hero-stats{margin-top:2.2rem;border-radius:18px}
+  .hero-stat{padding:.6rem .8rem}
+  .hero-stat-num{font-size:1.4rem}
+  .hero-stat-label{font-size:.76rem}
+  .about-grid{gap:1.8rem}
+  .about-text p{line-height:1.7;margin-bottom:.9rem}
+  .about-text p:first-child{font-size:1.04rem;padding-left:.9rem}
+  .about-cards{gap:.8rem}
+  .about-card{padding:1.15rem}
+  .about-card-header{gap:.8rem;margin-bottom:.6rem}
+  .about-card-icon{width:44px;height:44px;border-radius:13px;font-size:1.15rem}
+  .about-card-title{font-size:1rem}
+  .about-card-text{font-size:.88rem}
+  .edu-item{margin-bottom:1.5rem}
+  .edu-item::before{top:1.7rem}
+  .edu-card{padding:1.2rem}
+  .edu-degree{font-size:1.08rem}
+  .edu-school{margin-bottom:.7rem;font-size:.92rem}
+  .edu-logo{width:30px;height:30px}
+  .edu-courses{gap:.35rem;margin-top:.6rem}
+  .course-chip{padding:.22rem .55rem;font-size:.74rem}
+  .skills-grid,.activities-grid{gap:1rem}
+  .skill-cat,.activity-card{padding:1.2rem}
+  .skill-cat-header{margin-bottom:1rem;gap:.7rem}
+  .skill-cat-icon,.activity-icon{width:40px;height:40px;font-size:1.05rem}
+  .skill-item{margin-bottom:.85rem}
+  .soft-skills{gap:.5rem}
+  .soft-chip{padding:.4rem .85rem;font-size:.82rem}
+  .projects-filter{gap:.4rem;margin-bottom:1.5rem}
+  .filter-btn{padding:.38rem .9rem;font-size:.8rem}
+  .projects-grid,.certs-grid{gap:1.1rem}
+  .project-body{padding:1.1rem 1.2rem 1.3rem}
+  .project-title{font-size:1.12rem;margin-bottom:.5rem}
+  .project-desc{font-size:.88rem;line-height:1.6;margin-bottom:.8rem}
+  .project-tags{margin-bottom:1rem;gap:.3rem}
+  .project-tag{font-size:.72rem;padding:.18rem .55rem}
+  .project-link{padding:.42rem .9rem;font-size:.8rem}
+  .exp-grid{gap:1rem}
+  .exp-card{padding:1.2rem;gap:.9rem}
+  .exp-icon{width:46px;height:46px;border-radius:14px;font-size:1.2rem}
+  .exp-title{font-size:1.1rem}
+  .exp-org{font-size:.9rem;margin-bottom:.5rem}
+  .exp-list li{font-size:.88rem;margin-bottom:.35rem}
+  .cert-card{padding:1.1rem}
+  .cert-preview{height:170px;margin-bottom:.8rem}
+  .cert-title{font-size:1rem}
+  .cert-org{margin-bottom:.8rem}
+  .activity-header{margin-bottom:.7rem}
+  .activity-desc{font-size:.88rem;line-height:1.65}
+  .contact-grid{gap:1.6rem}
+  .contact-info{gap:.8rem}
+  .contact-item{padding:.85rem 1rem;gap:.8rem}
+  .contact-icon{width:38px;height:38px;border-radius:11px}
+  .contact-form{padding:1.2rem}
+  .form-group{margin-bottom:.9rem}
+  .form-input{padding:.7rem .9rem;font-size:16px}
+  .form-submit{padding:.85rem}
+  footer{padding:2.2rem 5%}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:1.6rem 1.2rem;margin-bottom:2rem}
+  .footer-brand,.footer-grid>:nth-child(4){grid-column:1/-1}
+  .footer-desc{font-size:.88rem;margin-bottom:.9rem;max-width:none}
+  .footer-heading{margin-bottom:.7rem}
+  .footer-links{gap:.4rem}
+  .footer-links a{font-size:.88rem}
+  .footer-bottom{padding-top:1.2rem;gap:.5rem}
+}
+@media(max-width:480px){
+  section{padding:48px 5%}
+  .hero{padding:84px 5% 56px}
+  .hero-btns .btn{max-width:260px}
+  .project-img{height:160px}
+  .cert-preview{height:150px}
+  .gallery-grid{grid-auto-rows:140px;gap:.7rem}
+}
+@media(hover:none){
+  .exp-card:hover,.contact-item:hover{translate:0 0}
+}
 @media(hover:none){
   :is(.about-card,.edu-card,.skill-cat,.project-card,.exp-card,.cert-card,.activity-card,.ach-card,.contact-item,.contact-form):hover{--lift:0px}
 }
